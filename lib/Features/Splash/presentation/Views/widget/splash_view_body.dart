@@ -1,5 +1,9 @@
+import 'package:bookly/Features/home/presentation/view/home_view.dart';
+import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
+import 'package:get/utils.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -23,22 +27,22 @@ class _SplashViewBodyState extends State<SplashViewBody>
   void initState() {
     super.initState();
 
+    addanimationtotextinsplahview();
+
+    navigattohomeview();
+  }
+
+  void addanimationtotextinsplahview() {
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 2500),
     );
 
-    // =========================
-    // Logo Animation
-    // =========================
-
-    // اللوجو يظهر تدريجيًا
     logoFadeAnimation = CurvedAnimation(
       parent: animationController,
       curve: const Interval(0.0, 0.45, curve: Curves.easeOut),
     );
 
-    // اللوجو يبدأ أصغر شوية ثم يكبر لحجمه الطبيعي
     logoScaleAnimation = Tween<double>(begin: 0.75, end: 1.0).animate(
       CurvedAnimation(
         parent: animationController,
@@ -46,7 +50,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
       ),
     );
 
-    // اللوجو يدخل من تحت لفوق
     logoSlideAnimation =
         Tween<Offset>(begin: const Offset(0, 0.35), end: Offset.zero).animate(
           CurvedAnimation(
@@ -55,17 +58,11 @@ class _SplashViewBodyState extends State<SplashViewBody>
           ),
         );
 
-    // =========================
-    // Text Animation
-    // =========================
-
-    // النص يظهر بعد بداية ظهور اللوجو
     textFadeAnimation = CurvedAnimation(
       parent: animationController,
       curve: const Interval(0.45, 0.85, curve: Curves.easeOut),
     );
 
-    // النص يدخل من تحت لفوق
     textSlideAnimation =
         Tween<Offset>(begin: const Offset(0, 0.4), end: Offset.zero).animate(
           CurvedAnimation(
@@ -74,8 +71,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
           ),
         );
 
-    // تشغيل الـ Animation
     animationController.forward();
+  }
+
+  void navigattohomeview() {
+    Future.delayed(Duration(seconds: 3), () {
+      Get.to(
+        () => HomeView(),
+        transition: Transition.zoom,
+        duration: KDataDurtion,
+      );
+    });
   }
 
   @override
@@ -90,9 +96,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        // =========================
-        // Logo
-        // =========================
         FadeTransition(
           opacity: logoFadeAnimation,
           child: SlideTransition(
@@ -105,10 +108,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
         ),
 
         const SizedBox(height: 20),
-
-        // =========================
-        // Text
-        // =========================
         FadeTransition(
           opacity: textFadeAnimation,
           child: SlideTransition(
