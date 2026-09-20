@@ -1,6 +1,8 @@
 import 'package:bookly/Features/home/presentation/view/widget/custom_app_bar.dart';
 import 'package:bookly/Features/home/presentation/view/widget/custom_list_view_item.dart';
 import 'package:bookly/Features/home/presentation/view/widget/feature_books_list_view_item.dart';
+import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +20,79 @@ class HomeViewBody extends StatelessWidget {
 
           FeatureBooksListView(),
           SizedBox(height: 50),
-          Text("Best Seller", style: Styles.styletext18),
+          Text(
+            "Best Seller",
+            style: Styles.textstyle18.copyWith(fontFamily: KGtSectrafine),
+          ),
+          BestSellerListViewItem(),
         ],
       ),
     );
   }
 }
+
+class BestSellerListViewItem extends StatelessWidget {
+  const BestSellerListViewItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 150,
+      child: Row(
+        children: [
+          Card(
+            elevation: 6,
+            shadowColor: const Color.fromARGB(255, 232, 230, 230),
+
+            child: AspectRatio(
+              aspectRatio: 2.7 / 4,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(14),
+                  color: Colors.red,
+                  image: DecorationImage(
+                    image: AssetImage(AssetsData.KImages2),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// / Thin, the least thick.
+//   static const FontWeight w100 = FontWeight(100);
+
+//   /// Extra-light.
+//   static const FontWeight w200 = FontWeight(200);
+
+//   /// Light.
+//   static const FontWeight w300 = FontWeight(300);
+
+//   /// Normal / regular / plain.
+//   static const FontWeight w400 = FontWeight(400);
+
+//   /// Medium.
+//   static const FontWeight w500 = FontWeight(500);
+
+//   /// Semi-bold.
+//   static const FontWeight w600 = FontWeight(600);
+
+//   /// Bold.
+//   static const FontWeight w700 = FontWeight(700);
+
+//   /// Extra-bold.
+//   static const FontWeight w800 = FontWeight(800);
+
+//   /// Black, the most thick.
+//   static const FontWeight w900 = FontWeight(900);
+
+//   /// The default font weight.
+//   static const FontWeight normal = w400;
+
+//   /// A commonly used font weight that is heavier than normal.
+//   static const FontWeight bold = w700;
