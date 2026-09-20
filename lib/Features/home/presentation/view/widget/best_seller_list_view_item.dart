@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/presentation/view/widget/book_rating.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -31,23 +32,38 @@ class BestSellerListViewItem extends StatelessWidget {
             ),
           ),
           SizedBox(width: 30),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .5,
-                child: Text(
-                  "Harry Potter and The Goblet Of Fire ",
-                  style: Styles.textstyle20.copyWith(fontFamily: KGtSectrafine),
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: Text(
+                    "Harry Potter and The Goblet Of Fire ",
+                    style: Styles.textstyle20.copyWith(
+                      fontFamily: KGtSectrafine,
+                    ),
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 3),
-              Text("J.K.Rowling", style: Styles.textstyle14),
-              const SizedBox(height: 3),
-              Row(children: [Text(r"19.99$", style: Styles.textstyle20)]),
-            ],
+                const SizedBox(height: 4),
+                Text("J.K.Rowling", style: Styles.textstyle14),
+                const SizedBox(height: 3),
+                Row(
+                  children: [
+                    Text(r"19.99$", style: Styles.textstyle20),
+                    Spacer(),
+                    Bookrating(),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Divider(
+                  thickness: 1,
+                  color: const Color.fromARGB(136, 108, 131, 143),
+                ),
+              ],
+            ),
           ),
         ],
       ),
