@@ -7,7 +7,7 @@ class FeatureBooksListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4,
+      elevation: 6,
       shadowColor: const Color.fromARGB(255, 232, 230, 230),
 
       child: AspectRatio(
@@ -17,7 +17,7 @@ class FeatureBooksListViewItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(14),
             color: Colors.red,
             image: DecorationImage(
-              image: AssetImage(AssetsData.KImages),
+              image: AssetImage(AssetsData.KImages2),
               fit: BoxFit.fill,
             ),
           ),
