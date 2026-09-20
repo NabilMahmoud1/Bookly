@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/presentation/view/widget/best_seller_list_view_item.dart';
 import 'package:bookly/Features/home/presentation/view/widget/custom_app_bar.dart';
 import 'package:bookly/Features/home/presentation/view/widget/custom_list_view_item.dart';
 import 'package:bookly/Features/home/presentation/view/widget/feature_books_list_view_item.dart';
@@ -23,53 +24,6 @@ class HomeViewBody extends StatelessWidget {
           Text("Best Seller", style: Styles.textstyle18),
           SizedBox(height: 20),
           BestSellerListViewItem(),
-        ],
-      ),
-    );
-  }
-}
-
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 150,
-      child: Row(
-        children: [
-          Card(
-            elevation: 6,
-            shadowColor: const Color.fromARGB(255, 232, 230, 230),
-
-            child: AspectRatio(
-              aspectRatio: 2.7 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(14),
-                  color: Colors.red,
-                  image: DecorationImage(
-                    image: AssetImage(AssetsData.KImages2),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            ),
-          ),
-          SizedBox(width: 30),
-          Column(
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .5,
-                child: Text(
-                  "Marry Potter and The Goblet Of Fire ",
-                  style: Styles.textstyle20,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                ),
-              ),
-            ],
-          ),
         ],
       ),
     );
