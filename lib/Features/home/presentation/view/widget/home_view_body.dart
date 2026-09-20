@@ -20,10 +20,7 @@ class HomeViewBody extends StatelessWidget {
 
           FeatureBooksListView(),
           SizedBox(height: 50),
-          Text(
-            "Best Seller",
-            style: Styles.textstyle18.copyWith(fontFamily: KGtSectrafine),
-          ),
+          Text("Best Seller", style: Styles.textstyle18),
           BestSellerListViewItem(),
         ],
       ),
