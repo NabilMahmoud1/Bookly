@@ -8,14 +8,11 @@ class FeatureBooksListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * .25,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18),
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return FeatureBooksListViewItem();
-          },
-        ),
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return FeatureBooksListViewItem();
+        },
       ),
     );
   }
