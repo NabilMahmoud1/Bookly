@@ -1,5 +1,6 @@
 import 'package:bookly/Features/home/presentation/view/widget/custom_app_bar.dart';
 import 'package:bookly/Features/home/presentation/view/widget/custom_list_view_item.dart';
+import 'package:bookly/Features/home/presentation/view/widget/feature_books_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -11,7 +12,7 @@ class HomeViewBody extends StatelessWidget {
       children: [
         SafeArea(child: CustomAppBar()),
 
-        CustomListViewItem(),
+        FeatureBooksListView(),
       ],
     );
   }
