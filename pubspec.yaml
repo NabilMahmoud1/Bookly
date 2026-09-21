@@ -38,6 +38,12 @@ dependencies:
   font_awesome_flutter: ^11.0.0
   google_fonts: ^8.2.1
   go_router: ^17.5.0
+  flutter_launcher_icons: ^0.14.4
+flutter_launcher_icons:
+   android: "launcher_icon"
+   ios: true
+   image_path: "assets/images/profi22.png"
+   min_sdk_android: 21 # android min sdk min:16, default 21
 
 dev_dependencies:
   flutter_test:
