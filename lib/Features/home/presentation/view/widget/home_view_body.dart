@@ -26,7 +26,6 @@ class HomeViewBody extends StatelessWidget {
 
                 Text("Best Seller", style: Styles.textstyle18),
 
-                // المسافة بين Best Seller والـ List
                 const SizedBox(height: 10),
               ],
             ),
