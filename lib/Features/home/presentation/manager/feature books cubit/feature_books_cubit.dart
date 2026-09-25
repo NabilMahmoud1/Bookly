@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:bookly/Features/home/data/model/book_model/book_model.dart';
 import 'package:bookly/Features/home/data/repos/home_repo.dart';
-import 'package:bookly/core/errors/failure.dart';
 import 'package:meta/meta.dart';
 
 part 'feature_books_state.dart';
