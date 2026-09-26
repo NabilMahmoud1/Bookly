@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  setupLocator();
   runApp(const Bookly());
 }
 
@@ -20,7 +21,8 @@ class Bookly extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => FeatureBooksCubit(getIt.get<HomeRepoImpl>()),
+          create: (context) =>
+              FeatureBooksCubit(getIt.get<HomeRepoImpl>())..getfeaturebooks(),
         ),
         BlocProvider(
           create: (context) => BestSellerCubit(getIt.get<HomeRepoImpl>()),

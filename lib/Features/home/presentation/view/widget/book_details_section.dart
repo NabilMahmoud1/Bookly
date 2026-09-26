@@ -16,7 +16,9 @@ class BookDetailsSection extends StatelessWidget {
 
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.33,
-          child: FeatureBooksListViewItem(),
+          child: FeatureBooksListViewItem(
+            urlImage: 'https://picsum.photos/400/600',
+          ),
         ),
         SizedBox(height: 40),
         Text("The Jungle Book", style: Styles.textstyle30.copyWith()),

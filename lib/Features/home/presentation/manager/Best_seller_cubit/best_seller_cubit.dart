@@ -14,7 +14,7 @@ class BestSellerCubit extends Cubit<BestSellerState> {
     var result = await homeRepo.fetchFeatureBooks();
     result.fold(
       (Failure) {
-        emit(BestSellerfailure(Failure.toString()));
+        emit(BestSellerfailure(Failure.errormessage));
       },
       (books) {
         emit(BestSellersuccess(books));

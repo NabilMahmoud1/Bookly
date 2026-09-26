@@ -11,7 +11,9 @@ class SimilarBookListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return FeatureBooksListViewItem();
+          return FeatureBooksListViewItem(
+            urlImage: 'https://picsum.photos/400/600',
+          );
         },
       ),
     );
