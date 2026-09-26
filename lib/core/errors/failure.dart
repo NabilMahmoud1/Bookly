@@ -32,7 +32,7 @@ class Servirefailure extends Failure {
         return Servirefailure(errormessage: "cancel");
 
       case DioExceptionType.connectionError:
-        return Servirefailure(errormessage: "connectionError");
+        return Servirefailure(errormessage: "No Internet Connection");
 
       case DioExceptionType.unknown:
         return Servirefailure(errormessage: "unknown");

@@ -14,7 +14,7 @@ final class BestSellerfailure extends BestSellerState {
 }
 
 final class BestSellersuccess extends BestSellerState {
-  final List<BookModel> books;
+  final List<Bookmodel> books;
 
   BestSellersuccess(this.books);
 }

@@ -1,8 +1,13 @@
-class PanelizationSummary {
-  bool? containsEpubBubbles;
-  bool? containsImageBubbles;
+import 'package:equatable/equatable.dart';
 
-  PanelizationSummary({this.containsEpubBubbles, this.containsImageBubbles});
+class PanelizationSummary extends Equatable {
+  final bool? containsEpubBubbles;
+  final bool? containsImageBubbles;
+
+  const PanelizationSummary({
+    this.containsEpubBubbles,
+    this.containsImageBubbles,
+  });
 
   factory PanelizationSummary.fromJson(Map<String, dynamic> json) {
     return PanelizationSummary(
@@ -15,4 +20,7 @@ class PanelizationSummary {
     'containsEpubBubbles': containsEpubBubbles,
     'containsImageBubbles': containsImageBubbles,
   };
+
+  @override
+  List<Object?> get props => [containsEpubBubbles, containsImageBubbles];
 }

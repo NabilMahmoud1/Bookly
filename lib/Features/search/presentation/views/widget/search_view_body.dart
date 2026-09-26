@@ -34,7 +34,7 @@ class CustomSearchListViev extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.only(bottom: 8),
-          child: BestSellerListViewItem(),
+          // child: BestSellerListViewItem(),
         );
       },
     );
