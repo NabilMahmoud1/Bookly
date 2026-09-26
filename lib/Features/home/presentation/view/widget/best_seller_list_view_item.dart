@@ -28,7 +28,9 @@ class BestSellerListViewItem extends StatelessWidget {
                     shadowColor: const Color.fromARGB(255, 232, 230, 230),
 
                     child: FeatureBooksListViewItem(
-                      urlImage: bookModel.volumeInfo!.imageLinks!.thumbnail!,
+                      urlImage:
+                          bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                          'https://via.placeholder.com/150',
                     ),
                   ),
                   SizedBox(width: 30),
@@ -49,7 +51,8 @@ class BestSellerListViewItem extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          bookModel.volumeInfo!.authors!.toString(),
+                          bookModel.volumeInfo?.authors?.join(', ') ??
+                              'Unknown Author',
                           style: Styles.textstyle14.copyWith(
                             overflow: TextOverflow.ellipsis,
                           ),
