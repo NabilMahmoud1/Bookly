@@ -2,9 +2,11 @@ import 'package:bookly/Features/home/presentation/manager/feature%20books%20cubi
 import 'package:bookly/Features/home/presentation/view/widget/feature_books_list_view_items.dart';
 import 'package:bookly/core/errors/Custom_error_widget.dart';
 import 'package:bookly/core/errors/custom_circle_indector.dart';
+import 'package:bookly/core/utils/app_route.dart';
 import 'package:bookly/core/utils/widgets/Custom_circle_indecator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class FeatureBooksListView extends StatelessWidget {
   const FeatureBooksListView({super.key});
@@ -20,9 +22,18 @@ class FeatureBooksListView extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return FeatureBooksListViewItem(
-                  urlImage:
-                      state.books[index].volumeInfo!.imageLinks!.thumbnail!,
+                return GestureDetector(
+                  onTap: () {
+                    context.push(
+                      AppRoute.bookdetiles,
+                      extra: state.books[index],
+                    );
+                  },
+                  child: FeatureBooksListViewItem(
+                    urlImage:
+                        state.books[index].volumeInfo?.imageLinks?.thumbnail ??
+                        'https://via.placeholder.com/150',
+                  ),
                 );
               },
             ),

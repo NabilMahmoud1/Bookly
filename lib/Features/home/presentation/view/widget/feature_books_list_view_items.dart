@@ -1,5 +1,3 @@
-import 'package:bookly/core/errors/custom_circle_indector.dart';
-import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/widgets/Custom_circle_indecator.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
