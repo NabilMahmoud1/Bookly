@@ -41,7 +41,7 @@ class BestSellerListViewItem extends StatelessWidget {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * .5,
                           child: Text(
-                            bookModel.volumeInfo!.title!,
+                            bookModel.volumeInfo?.title ?? "no title",
                             style: Styles.textstyle20.copyWith(
                               fontFamily: KGtSectrafine,
                             ),
@@ -64,8 +64,8 @@ class BestSellerListViewItem extends StatelessWidget {
                             Text("Free", style: Styles.textstyle20),
                             Spacer(),
                             Bookrating(
-                              count: bookModel.volumeInfo!.averageRating ?? 0,
-                              rating: bookModel.volumeInfo!.ratingsCount ?? 0,
+                              count: bookModel.volumeInfo?.averageRating ?? 0,
+                              rating: bookModel.volumeInfo?.ratingsCount ?? 0,
                             ),
                           ],
                         ),

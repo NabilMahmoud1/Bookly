@@ -1,18 +1,14 @@
-import 'package:bookly/Features/home/presentation/manager/search_cubit/search_cubit.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomTextField extends StatelessWidget {
-  CustomTextField({
+  const CustomTextField({
     super.key,
     this.onsubmitt,
-    this.ontap,
     required TextEditingController controller,
   });
   final void Function(String)? onsubmitt;
-  final void Function()? ontap;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -32,10 +28,7 @@ class CustomTextField extends StatelessWidget {
           hintText: "search",
           suffixIcon: Padding(
             padding: const EdgeInsets.only(top: 10),
-            child: GestureDetector(
-              onTap: ontap,
-              child: const FaIcon(FontAwesomeIcons.magnifyingGlass, size: 20),
-            ),
+            child: const FaIcon(FontAwesomeIcons.magnifyingGlass, size: 20),
           ),
           labelText: "search",
           labelStyle: Styles.textstyle16,

@@ -15,9 +15,10 @@ class HomeRepoImpl implements HomeRepo {
       var data = await apiService.get(
         endpoint: "volumes?q=maths&key=AIzaSyBJwI9D1Wq51qB4hXbvbf7yOXRFF8zhZHQ",
       );
+      // print(data);
       //https://www.googleapis.com/books/v1/volumes?q=subject:programming&orderBy=newest&key=AIzaSyBJwI9D1Wq51qB4hXbvbf7yOXRFF8zhZHQ
       List<Bookmodel> Books = [];
-      for (var element in data["items"]) {
+      for (var element in data["items"] ?? []) {
         Books.add(Bookmodel.fromJson(element));
       }
       return right(Books);
@@ -35,10 +36,12 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
         endpoint:
-            "volumes?q=subject:programming&key=AIzaSyBJwI9D1Wq51qB4hXbvbf7yOXRFF8zhZHQ",
+            "volumes?q=footbool&key=AIzaSyBJwI9D1Wq51qB4hXbvbf7yOXRFF8zhZHQ",
       );
+      print(data);
+      // https: //www.googleapis.com/books/v1/volumes?q=subject:programming&orderBy=newest&key=AIzaSyBJwI9D1Wq51qB4hXbvbf7yOXRFF8zhZHQ
       List<Bookmodel> Books = [];
-      for (var element in data["items"]) {
+      for (var element in data["items"] ?? []) {
         Books.add(Bookmodel.fromJson(element));
       }
       return right(Books);
@@ -58,7 +61,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
         endpoint:
-            "volumes?orderBy=relevance&key=AIzaSyBJwI9D1Wq51qB4hXbvbf7yOXRFF8zhZHQ&q=subject:science",
+            "volumes?q=subject:$Catagray&key=AIzaSyBJwI9D1Wq51qB4hXbvbf7yOXRFF8zhZHQ$orderBy:n",
       );
       List<Bookmodel> Books = [];
       for (var element in data["items"]) {
@@ -81,10 +84,11 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
         endpoint:
-            "volumes?orderBy=relevance&key=AIzaSyBJwI9D1Wq51qB4hXbvbf7yOXRFF8zhZHQ&q=subject:$textsearch",
+            "volumes?q=$textsearch&key=AIzaSyBJwI9D1Wq51qB4hXbvbf7yOXRFF8zhZHQ",
       );
+      print(data);
       List<Bookmodel> Books = [];
-      for (var element in data["items"]) {
+      for (var element in data["items"] ?? []) {
         Books.add(Bookmodel.fromJson(element));
       }
       return right(Books);

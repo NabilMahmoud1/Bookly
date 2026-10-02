@@ -7,9 +7,14 @@ import 'package:bookly/core/utils/widgets/Custom_circle_indecator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SearchViewBody extends StatelessWidget {
+class SearchViewBody extends StatefulWidget {
   SearchViewBody({super.key});
 
+  @override
+  State<SearchViewBody> createState() => _SearchViewBodyState();
+}
+
+class _SearchViewBodyState extends State<SearchViewBody> {
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -26,14 +31,6 @@ class SearchViewBody extends StatelessWidget {
               BlocProvider.of<SearchCubit>(
                 context,
               ).getsearchebooks(textsearch: data);
-            },
-
-            ontap: () {
-              if (controller.text.isNotEmpty) {
-                BlocProvider.of<SearchCubit>(
-                  context,
-                ).getsearchebooks(textsearch: controller.text);
-              }
             },
           ),
 

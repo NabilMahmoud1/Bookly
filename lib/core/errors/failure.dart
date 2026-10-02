@@ -39,9 +39,6 @@ class Servirefailure extends Failure {
 
       case DioExceptionType.transformTimeout:
         return Servirefailure(errormessage: "transformTimeout");
-
-      default:
-        return Servirefailure(errormessage: "error out side dio");
     }
   }
   factory Servirefailure.fromResponse(int statescode, dynamic responce) {
@@ -52,7 +49,9 @@ class Servirefailure extends Failure {
     } else if (statescode == 500) {
       return Servirefailure(errormessage: 'internet server');
     } else {
-      return Servirefailure(errormessage: "there are arror please try agin");
+      return Servirefailure(
+        errormessage: "no result relatted there arre error please try again!",
+      );
     }
   }
 }

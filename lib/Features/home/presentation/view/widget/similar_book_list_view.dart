@@ -21,7 +21,8 @@ class SimilarBookListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return FeatureBooksListViewItem(
                   urlImage:
-                      state.books[index].volumeInfo!.imageLinks!.thumbnail!,
+                      state.books[index].volumeInfo?.imageLinks?.thumbnail ??
+                      'https://via.placeholder.com/150',
                 );
               },
             ),
