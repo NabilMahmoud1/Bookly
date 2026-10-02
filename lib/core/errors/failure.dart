@@ -50,7 +50,7 @@ class Servirefailure extends Failure {
       return Servirefailure(errormessage: 'internet server');
     } else {
       return Servirefailure(
-        errormessage: "no result relatted there arre errors please try again!!",
+        errormessage: "No result relatted there arre errors please try again!!",
       );
     }
   }
