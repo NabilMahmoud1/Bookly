@@ -1,17 +1,57 @@
-# bookly
+# 📚 Bookly App
 
-A new Flutter project.
+A modern Flutter application for discovering and exploring books using the Google Books API.
 
-## Getting Started
+Bookly provides a clean and simple experience for browsing books, viewing book details, and discovering similar books.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ Features
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- 📚 Browse books
+- 🔍 Search and discover books
+- 📖 View detailed book information
+- 🔗 Open book preview
+- 📚 Discover similar books
+- 🌐 Fetch books using REST API
+- ⚡ Fast and responsive UI
+- ❌ Error handling for API requests
+- 🔄 State management with Cubit / BLoC
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🛠️ Technologies & Tools
+
+- 💙 Flutter
+- 🎯 Dart
+- 🧠 BLoC / Cubit
+- 🔄 MVVM Pattern
+- 🌐 REST API
+- 🚀 Dio
+- 📦 Dartz
+- 🧩 Equatable
+- 🌿 Git & GitHub
+
+---
+
+## 🏗️ Project Structure
+
+The project is organized into separate layers to keep the code clean and maintainable.
+
+```text
+lib/
+│
+├── Features/
+│   └── home/
+│       ├── data/
+│       │   ├── model/
+│       │   └── repos/
+│       │
+│       └── presentation/
+│           ├── manager/
+│           └── view/
+│
+└── core/
+    ├── errors/
+    ├── utils/
+    └── widgets/
